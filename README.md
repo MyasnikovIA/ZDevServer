@@ -63,16 +63,16 @@ Class %ZDev.Demo.demo3GetObject Extends %RegisteredObject
 
 ClassMethod run()
 {
-     s obj=##class(%ZDev.Client).%New()
-     if obj.Connect("192.168.1.100",6006,"_SYSTEM","SYS","USER",.Error)=1 {
-        s tmp=obj.GetObject("Refs.AllBaze",2,"SIRENA",.Error)
-         zw tmp
-         zw Error
-     }else{
-       zw Error     
-     }
-     d obj.DisConnect()
-     s obj=""
+       s obj=##class(%ZDev.Client).%New()
+       if obj.Connect("192.168.1.100",6006,"_SYSTEM","SYS","USER",.Error)=1 {
+           s tmp=obj.GetObject("Refs.AllBaze",2,"SIRENA",.Error)
+           zw tmp
+           zw Error
+        }else{
+            zw Error     
+        }
+        d obj.DisConnect()
+        s obj=""
 }
 
 }
